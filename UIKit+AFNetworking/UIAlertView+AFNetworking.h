@@ -23,7 +23,7 @@
 
 #import <Availability.h>
 
-#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && !defined(AF_APP_EXTENSIONS)
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 
 #import <UIKit/UIKit.h>
 
@@ -46,7 +46,7 @@
  */
 #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
 + (void)showAlertViewForTaskWithErrorOnCompletion:(NSURLSessionTask *)task
-                                         delegate:(id)delegate;
+                                         delegate:(id)delegate NS_EXTENSION_UNAVAILABLE_IOS("Not available in app extensions.");
 #endif
 
 /**
@@ -61,7 +61,7 @@
 + (void)showAlertViewForTaskWithErrorOnCompletion:(NSURLSessionTask *)task
                                          delegate:(id)delegate
                                 cancelButtonTitle:(NSString *)cancelButtonTitle
-                                otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+                                otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION NS_EXTENSION_UNAVAILABLE_IOS("Not available in app extensions.");
 #endif
 
 ///------------------------------------------
@@ -75,7 +75,7 @@
  @param delegate The alert view delegate.
  */
 + (void)showAlertViewForRequestOperationWithErrorOnCompletion:(AFURLConnectionOperation *)operation
-                                                     delegate:(id)delegate;
+                                                     delegate:(id)delegate NS_EXTENSION_UNAVAILABLE_IOS("Not available in app extensions.");
 
 /**
  Shows an alert view with the error of the specified request operation, if any, with a custom cancel button title and other button titles.
@@ -88,7 +88,7 @@
 + (void)showAlertViewForRequestOperationWithErrorOnCompletion:(AFURLConnectionOperation *)operation
                                                      delegate:(id)delegate
                                             cancelButtonTitle:(NSString *)cancelButtonTitle
-                                            otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+                                            otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION NS_EXTENSION_UNAVAILABLE_IOS("Not available in app extensions.");
 
 @end
 
